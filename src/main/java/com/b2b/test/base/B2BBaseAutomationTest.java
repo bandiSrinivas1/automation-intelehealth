@@ -37,7 +37,6 @@ import com.b2b.support.ParameterProvider;
 import com.b2b.utils.AutomationUtil;
 import com.b2b.utils.B2BBaseTestListener;
 import com.b2b.utils.B2BConstants;
-import com.clasplusapp.web.pages.ClassplusLoginPage;
 import com.classplusapp.common.WebDriversEnum;
 
 @Listeners(B2BBaseTestListener.class)
@@ -46,7 +45,6 @@ public abstract class B2BBaseAutomationTest {
 	private static final Logger log = LogManager.getLogger(B2BBaseAutomationTest.class);
 	protected static final String BASE_DIR = System.getProperty("user.dir");
 	protected static final String FILE_SEPARATOR = System.getProperty("file.separator");
-	protected ClassplusLoginPage loginPage;
 
 	protected static String browserDriverPath = null;
 	protected static String loginURL = null;
@@ -61,31 +59,11 @@ public abstract class B2BBaseAutomationTest {
 	protected static Properties langXPathsProp = null;
 	private static Map<WebDriversEnum, WebDriver> webDriverPool = new Hashtable<WebDriversEnum, WebDriver>();
 
-	protected static final String emailAddress = System.getProperty("store_email_address") != null
-			? System.getProperty("store_email_address")
-			: "gunjan@classplusapp.com";
-	protected static final String tutorMobileNumber = System.getProperty("store_tutor_mobile_number") != null
-			? System.getProperty("store_tutor_mobile_number")
-			: "9711153079";
-	protected static final String studentMobileNumber = System.getProperty("store_student_mobile_number") != null
-			? System.getProperty("store_student_mobile_number")
-			: "7290085267";
-	protected static final String facultyOneMobileNumber = System.getProperty("store_faculty_mobile_number") != null
-			? System.getProperty("store_faculty_mobile_number")
-			: "9966119838";
-	protected static final String parentMobileNumber = System.getProperty("store_parent_mobile_number") != null
-			? System.getProperty("store_parent_mobile_number")
-			: "9899805993";
-	protected static final String facultyTwoMobileNumber = System.getProperty("store_faculty_two_mobile_number") != null
-			? System.getProperty("store_faculty_two_mobile_number")
-			: "9885672403";
-	protected static final String tutorTwoMobileNumber = System.getProperty("store_tutor_two_mobile_number") != null
-			? System.getProperty("store_tutor_two_mobile_number")
-			: "6868594886";
-	protected static final String orgCode = System.getProperty("orgCode") != null
-			? System.getProperty("orgCode")
-			: "learn";
-	
+	/*
+	 * protected static final String emailAddress =
+	 * System.getProperty("store_email_address") != null ?
+	 * System.getProperty("store_email_address") : "gunjan@classplusapp.com";
+	 */
 
 	@BeforeSuite
 	@Parameters({ "siteURL", "language", "browser", "headless", "remoteURL" })
